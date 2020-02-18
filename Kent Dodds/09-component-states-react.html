@@ -27,6 +27,9 @@
       clearInterval(this.timer);
       this.setState({lapse: 0, running: false});
     }
+    componentWillUnmount() { //Function called when component is about to be removed
+      clearInterval(this.timer); //setInterval must be cleared when component is removed
+    }
     render() {
       const {lapse, running} = this.state;
       const buttonStyles = {
